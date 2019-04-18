@@ -1,0 +1,36 @@
+package chefetage2;
+
+public interface ReadableBudget {
+      int getValue();
+} 
+package chefetage2;
+public class Budget2 implements ReadableBudget {
+      private int value;
+
+      @Override
+      public int getValue() {
+          return value;
+      }
+
+      public void setValue(int value) {
+          this.value = value;
+      }
+} 
+package chefetage2;
+import mitarbeiter2.*;
+public class Chef2 {
+    public void stelleMitarbeiterEin() {
+        Budget2 budget = new Budget2();
+        budget.setValue(5000);
+        Mitarbeiter2 m = new Mitarbeiter2(budget);
+    }
+}
+package mitarbeiter2;
+import chefetage2.ReadableBudget;
+public class Mitarbeiter2 {
+    private ReadableBudget budget;
+
+    public Mitarbeiter2(ReadableBudget budget) {
+        this.budget = budget;
+    } 
+}
